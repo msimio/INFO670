@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, Image, Button, FlatList} from 'react-native'
 
-export default function App() {
+const Dog = props => {
+  const [isHungry, setIsHungry]= useState(true);
+  return 
+  (  
+  <View>
+    
+    <Text>Hello, I am {props.name}, and I am {isHungry? "hungry":"full"}!.</Text>
+    <Button
+      
+      onPress={()=>{setIsHungry(false)}}
+      title='Feed'
+    />
+  </View>
+  );
+
+}
+
+const Dogs = () => {
   return (
-    <View style={styles.container}>
-      <Text>This is Michael Simio!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text>Welcome all!</Text>
+      <Dog name="Fido"/>
+      <Dog name = "John"/>
+      <Dog name="Paul"/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const DogList = () => {
+  return(
+    <View>
+      <FlatList
+        data={[
+          {name: "john"},
+          {name: "john2"},
+          {name: "john3"}
+        ]}
+        renderItem={({item}) => <Dog name={item.name}></Dog>}
+      
+      
+      
+      />
+    </View>
+
+  );
+}
+
+export default Dogs;//default view
