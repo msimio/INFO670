@@ -1,4 +1,4 @@
-React Native App
+React Native Grocery List App
 
 This app is designed for shoppers who want a quick and easy way to create and edit a list of items that they need to buy at the grocery store.
 
