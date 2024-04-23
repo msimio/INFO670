@@ -15,6 +15,8 @@ const App = () => {
     const [items, setItems] = useState([]); 
     //States to determine if we are in edit mode
     const [editIndex, setEditIndex] = useState(-1); 
+    //States to determine if we are in edit mode
+    const [gotIndex, setGotIndex] = useState(false); 
   
     const addItem = () => { 
         //Check of textinput has anything in it
@@ -52,11 +54,37 @@ const App = () => {
         updatedItems.splice(index, 1); 
         setItems(updatedItems); 
     }; 
+    /*
+    const gotItem = (index) => { 
+      setGotIndex(gotIndex => !gotIndex)
+      if(gotIndex==true)
+      {
+        const updatedItems = [...items]; 
+        updatedItems.selected = true
+        setItems(updatedItems); 
+      }
+      else
+      {
+        const updatedItems = [...items]; 
+        updatedItems.selected = false
+        setItems(updatedItems); 
+      }
+     
+
+      
+      //items[index].selected=!items[index].selected; 
+      
+
+      
+
+      
+  }; 
+  */
   
     const renderItem = ({ item, index }) => ( 
         <View style={styles.addedItem}> 
-            <Text 
-                style={styles.itemList}>{item}</Text> 
+            <Text>{item}</Text> 
+
             <View 
                 style={styles.itemButtons}>
                 <Button title='Edit'
@@ -65,6 +93,7 @@ const App = () => {
                 <Button title='Delete'
                     color={"#ADD8E6"}
                     onPress={()=>deleteItem(index)}/> 
+             
             </View> 
         </View> 
     ); 
