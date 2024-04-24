@@ -1,10 +1,10 @@
+# React Native Grocery List App
+
 # Design And Purpose
 
-React Native Grocery List App
+This app is designed for shoppers who want a quick and easy way to create and edit a list of items that they need to buy at the grocery store.
 
 # Basic Use
-
-This app is designed for shoppers who want a quick and easy way to create and edit a list of items that they need to buy at the grocery store.
 
 Users simply enter the item into the text field and press the "Add Item" button to add the items to the list.
 
