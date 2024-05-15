@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MyFirstReactNative",
-    "slug": "MyFirstReactNative",
+    "name": "GalleryDemo",
+    "slug": "GalleryDemo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
