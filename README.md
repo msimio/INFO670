@@ -1,3 +1,10 @@
-React Native App
+# Design and Purpose
 
-<img width="1440" alt="Screenshot 2024-04-03 at 7 55 31 PM" src="https://github.com/msimio/INFO670/assets/137801161/882ddaff-1ff3-4f93-95f3-06b4a31fa454">
+This app was designed to display a small thumbnail photo gallery with the option to expand the photos to a larger view. This app demonstrates the use of Tab Navigation and Stack Navigation and uses local storage to save a user profile.
+
+# Screenshots
+
+
+
+
+
