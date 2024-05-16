@@ -59,8 +59,10 @@ export default function Profile() {
     try {
       const value1 = await AsyncStorage.getItem('my-username');
       const value2 = await AsyncStorage.getItem('my-bio');
+      const value3 = await AsyncStorage.getItem('my-fav');
       setText(value1)
       setBio(value2)
+      setSelectedItem(value3)
 
       //Alert.alert('Profile Loaded')
       
