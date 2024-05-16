@@ -18,7 +18,7 @@ const ImageViewer = ({route}) => {
     if(itemId===1)
     {
       imgsrc=BTC_ICON
-      var mystr = "The first cryptocurrenmcy created by Satoshi Nakamoto"
+      var mystr = "The first cryptocurrency created by Satoshi Nakamoto"
       //setshortDesc("The first cryptocurrenmcy created by Satoshi Nakamoto")
     }
     else if(itemId===2)
