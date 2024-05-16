@@ -133,9 +133,7 @@ export default function Profile() {
       <Button icon="content-save" mode="contained" onPress={storeData} style={{width:300}}>
         Save Info
       </Button>
-      <Button icon="content-save" mode="contained" onPress={loadData} style={{width:300}}>
-        Load Info
-      </Button>
+      
       
 
       
