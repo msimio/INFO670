@@ -2,7 +2,7 @@
 
 # Design and Purpose
 
-This app is designed for retailers with an inventory of products that they wish to maintain and display. The app has two main features: add product and display all products. This example includes guitars but a category id is also added to have different categories of items.
+This app is designed for retailers with an inventory of products that they wish to maintain and display. The app has two main features: add product and display all products. This example includes guitars, but a category id is also added to have different categories of items.
 
 # Front End
 
