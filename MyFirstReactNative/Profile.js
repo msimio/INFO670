@@ -16,8 +16,14 @@ export default function Profile() {
   const [save, setSave] = React.useState("Hello");
   const [selectedItem, setSelectedItem] = React.useState('');
   const [expanded, setExpanded] = React.useState(true);
-
   const [selected, setSelected] = React.useState("");
+
+  const [name, setName] = useState('');
+  const [categoryID, setCategoryID] = useState('');
+  const [price, setPrice] = useState('');
+  const [responseStatus, setResponseStatus] = useState('');
+
+  const [posts, setPosts] = React.useState([]);
   
   const data = [
       {key:'1', value:'Bitcoin'},
@@ -27,115 +33,108 @@ export default function Profile() {
    
   ]
 
+  const addProduct = () => 
+  {
+    //Make API Call here
+    const url = `https://www.cs.drexel.edu/~mjs679/addProduct.php?name=${name}&cat_id=${categoryID}&price=${price}`;
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        if (data === "1") {
+          setResponseStatus("Product added successfully.");
+          Alert.alert("Success", "Product added successfully.");
+        } else {
+          setResponseStatus("Failed to add product.");
+          Alert.alert("Error", "Failed to add product.");
+        }
+      })
+      .catch(error => {
+        setResponseStatus("Error: " + error.message + ", MORE: " + JSON.stringify(error));
+        console.log(error);
+        // Alert.alert("Error", "Error: " + error.message);
+      });
 
-  const storeData = async (value) => {
-    try {
-      await AsyncStorage.setItem('my-username', text);
-      await AsyncStorage.setItem('my-bio', bio);
-      await AsyncStorage.setItem('my-fav', selectedItem);
-      if(text=="")
-      {
-        Alert.alert('Please enter a username')
-      }
-      else if(bio=="")
-      {
-        Alert.alert('Please enter a bio')
-      }
-      else
-      {
-      Alert.alert('Profile Saved')
-      }
-    } catch (e) {
-      Alert.alert('Profile Not Saved')
-      // saving error
-    }
-  };
-  //useEffect(loadData, []);
-  //useEffect(()=>{loadData})
+    
+  }
+
+
 
   
 
-  const loadData = async () => {
-    try {
-      const value1 = await AsyncStorage.getItem('my-username');
-      const value2 = await AsyncStorage.getItem('my-bio');
-      const value3 = await AsyncStorage.getItem('my-fav');
-      setText(value1)
-      setBio(value2)
-      setSelectedItem(value3)
 
-      //Alert.alert('Profile Loaded')
-      
-    } catch (e) {
-      // error reading value
-      //Alert.alert('Profile Not Loaded')
-      //setSave("Not loaded")
-    }
-  };
 
-  useEffect(() => {
-    // write your code here, it's like componentWillMount
-    loadData();
-}, [])
-
+ 
   
   
     
 
   return (
     <View style={{ flex: 1, alignItems: "center", gap:16, marginTop:40 }}>
-      <Text style={styles.heading}>Welcome to your Profile!</Text>
-      <Text>Enter your username, a brief bio and your favorite cryptocurrency to complete your profile!</Text>
+      <Text style={styles.heading}>Update Inventory</Text>
+      <Text>Input guitar name, and price and press add guitar to add to the shop</Text>
       
-      <View style={{ alignItems: "flex-start", justifyContent: "center", flexDirection:"row", gap:16, margin:8 }}>
 
       
       <TextInput
-      label="Username"
+      label="Name"
       style={{width:142}}
-      placeholder="Username"
+      placeholder="Name"
       mode="outlined"
-      value={text}
-      onChangeText={text => setText(text)}
+      value={name}
+      onChangeText={name => setName(name)}
       />
+
+    <TextInput
+      label="Category ID"
+      style={{width:142}}
+      placeholder="Category ID"
+      mode="outlined"
+      value={categoryID}
+      onChangeText={categoryID => setCategoryID(categoryID)}
+      />
+
+     
 
       <TextInput
-      label="Bio"
+      label="Price"
       style={{width:142}}
-      placeholder="Bio"
+      placeholder="Price"
       mode="outlined"
-      value={bio}
-      onChangeText={bio => setBio(bio)}
+      value={price}
+      onChangeText={price => setPrice(price)}
       />
 
-      </View>
-
-      
-
-      
-
-      <List.Accordion
-        title="Cryptocurrencies"
-        style={{width:300}}
-        left={props => <List.Icon {...props} icon="bitcoin" />}>
-        <List.Item title="Bitcoin" onPress={() => {setSelectedItem('Bitcoin');}} />
-        <List.Item title="Ethereum" onPress={() => {setSelectedItem('Ethereum');}} />
-        <List.Item title="Dogecoin" onPress={() => {setSelectedItem('Dogecoin');}} />
-        <List.Item title="Cardano" onPress={() => {setSelectedItem('Cardano');}} />
-
-
-      </List.Accordion>
-
-      <Text>Favorite Cryptocurrency: {selectedItem}</Text>
-
       
 
 
-
-      <Button icon="content-save" mode="contained" onPress={storeData} style={{width:300}}>
-        Save Info
+      <Button icon="guitar-electric" mode="contained" onPress={addProduct} style={{width:300}}>
+        Add Guitar
       </Button>
+
+
+
+
+
+     
+
+    
+
       
+ 
+    
+
+
+      
+
+      
+
+    
+  
+
+      
+      
+
+     
       
 
       

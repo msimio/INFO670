@@ -8,7 +8,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //create a stack navigator
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Gallery from './Gallery'
-import ImageViewer from './ImageViewer';
 import HomeScreen from './HomeScreen';
 
 
@@ -20,10 +19,9 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Cryptocurrency Gallery"
+          name="Michael's Guitar Shop"
           component={HomeScreen}
         />
-        <Stack.Screen name="ImageViewer" component={ImageViewer} options={{ title: 'Logo Detail' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

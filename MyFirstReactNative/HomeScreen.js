@@ -40,8 +40,9 @@ export default function HomeScreen()
   return (
     <PaperProvider theme={theme}>
         <Tab.Navigator>
-          <Tab.Screen name="Gallery" component={Gallery} options={{ headerShown: false , tabBarIcon:"view-gallery"}}   />
-          <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false , tabBarIcon:"account"}} />
+        <Tab.Screen name="Add Guitars" component={Profile} options={{ headerShown: false , tabBarIcon:"guitar-electric"}} />
+          <Tab.Screen name="Inventory" component={Gallery} options={{ headerShown: false , tabBarIcon:"guitar-pick-outline"}}   />
+
        
    
     </Tab.Navigator>
