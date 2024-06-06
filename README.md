@@ -16,7 +16,7 @@ React native paper components were used for styling
 
 # Back End
 
-This app uses MariaDB and php so fetch a JSON of the database in React Native.
+This app uses MariaDB and php to fetch a JSON of the database in React Native.
 
 Results are fetched from 'https://www.cs.drexel.edu/~mjs679/getAllProducts.php'
 
